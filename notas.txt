@@ -1,0 +1,47 @@
+
+Sudo apt-get update
+sudo apt-get upgrade 
+sudo usermod -aG sudo giovanni 
+Paso uno:
+ instalar apache 
+ Apt-get update 
+Sudo apt-get install apache2
+sudo apt install php libapache2-mod-php php-cli php-mbstring php-xml php-bcmath php-json php-zip php-tokenizer php-curl php-xmlwriter php-intl php-mysql -y
+Systemctl -start apache2
+Sudo chown giovanni:giovanni/var/www/html 
+
+Paso dos: instalar mysql 
+Sudo apt-get install mysql-server
+ systemctl start mysql
+Mysql >  create user 'giovanni'@'%' IDENTIFIED BY 'givovanni123;
+Mysql> GRANT ALL PRIVELEGES ON *.* TO 'giovanni'@'%';
+sudo snap install mysql-workbench-community
+Sudo apt install libmysqlclient21
+ systemctl restart mysql
+root@test:/etc/mysql/mysql.conf.d# nano mysqld.cnf 
+=0.0.0.0
+
+
+
+
+Paso 3: conectarse a mysql 
+Laravel new biblioteca 
+Composer require ibex/crud-generator-dev 
+composer require laravel/ui
+php artisan ui vue --auth
+npm install
+npm run build
+Paso 4: intalar ftp
+Sudo apt install vsftpd 
+en /etc/vsftpd.conf
+(anonymous_ENABLE=NO
+LOCAL_ENABLE =YES
+WRITE_ENABLE=YES
+CHROT_LOCAL_USER=YES)
+Debe haber un usuario creado 
+Sudo chown -R giovanni:giovanni /var/www/html 
+
+
+firewall 
+sudo ufw allow 21/tcp 
+sudo ufw reload 
